@@ -1,0 +1,3 @@
+# No external dependencies required.
+# notify.py uses only Python standard library modules:
+# - json, smtplib, os, datetime, email, pathlib

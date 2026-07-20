@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.baa.org)",
+      "WebFetch(domain:www.tcslondonmarathon.com)",
+      "WebFetch(domain:www.marathon.tokyo)",
+      "WebFetch(domain:www.sydneymarathon.com)",
+      "WebFetch(domain:www.londonmarathonevents.co.uk)"
+    ]
+  }
+}
