@@ -168,23 +168,38 @@ def build_email_html(upcoming_7, upcoming_14, unknown_reg_races, today):
     return html
 
 
+def load_recipients():
+    recipients_path = Path(__file__).parent / "recipients.txt"
+    recipients = []
+    with open(recipients_path, "r") as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#"):
+                recipients.append(line)
+    return recipients
+
+
 def send_email(subject, html_body):
     sender_email = os.environ["SENDER_EMAIL"]
     sender_password = os.environ["SENDER_PASSWORD"]
-    recipient_email = os.environ["RECIPIENT_EMAIL"]
+    recipients = load_recipients()
+
+    if not recipients:
+        print("No recipients found in recipients.txt. No email sent.")
+        return
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = subject
     msg["From"] = sender_email
-    msg["To"] = recipient_email
+    msg["To"] = ", ".join(recipients)
 
     msg.attach(MIMEText(html_body, "html"))
 
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
         server.login(sender_email, sender_password)
-        server.sendmail(sender_email, recipient_email, msg.as_string())
+        server.sendmail(sender_email, recipients, msg.as_string())
 
-    print(f"Email sent to {recipient_email}")
+    print(f"Email sent to {len(recipients)} recipient(s): {', '.join(recipients)}")
 
 
 def main():

@@ -5,7 +5,10 @@
       "WebFetch(domain:www.tcslondonmarathon.com)",
       "WebFetch(domain:www.marathon.tokyo)",
       "WebFetch(domain:www.sydneymarathon.com)",
-      "WebFetch(domain:www.londonmarathonevents.co.uk)"
+      "WebFetch(domain:www.londonmarathonevents.co.uk)",
+      "Bash(git fetch *)",
+      "Bash(git checkout *)",
+      "Bash(git stash *)"
     ]
   }
 }
