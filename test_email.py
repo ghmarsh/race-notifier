@@ -14,7 +14,7 @@ from datetime import date, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from notify import load_races, build_email_html, send_email, load_recipients, find_upcoming_races
+from notify import load_races, build_email_html, send_email, load_recipients
 
 
 def main():
@@ -34,30 +34,39 @@ def main():
     print(f"Recipients: {', '.join(recipients)}")
     print("")
 
-    # Create fake "upcoming" data using real races to simulate what a real email looks like
     races = load_races()
     today = date.today()
 
-    fake_upcoming_7 = []
-    fake_upcoming_14 = []
-    fake_upcoming_races = []
-    count = 0
+    # Simulate: one race with registration in 3 days
+    fake_upcoming_7 = [{"race": races[0], "reg_date": today + timedelta(days=3), "days_until": 3}]
+
+    # Simulate: one race with registration in 10 days
+    fake_upcoming_14 = [
+        {"race": races[0], "reg_date": today + timedelta(days=3), "days_until": 3},
+        {"race": races[1], "reg_date": today + timedelta(days=10), "days_until": 10},
+    ]
+
+    # Simulate: one race happening in 12 days
+    fake_upcoming_races = [{"race": races[2], "race_date": today + timedelta(days=12), "days_until": 12}]
+
+    # Simulate: a race ~6 months out with no registration date
+    six_month_race = None
     for race in races:
-        if count == 0:
-            fake_upcoming_7.append({"race": race, "reg_date": today + timedelta(days=3), "days_until": 3})
-        elif count == 1:
-            fake_upcoming_14.append({"race": race, "reg_date": today + timedelta(days=10), "days_until": 10})
-        elif count == 2:
-            fake_upcoming_races.append({"race": race, "race_date": today + timedelta(days=18), "days_until": 18})
-        if count >= 2:
+        if not race.get("registration_date"):
+            six_month_race = race
             break
-        count += 1
 
-    unknown_reg_races = [r for r in races if not r.get("registration_date")][:2]
+    fake_reg_reminders = []
+    if six_month_race:
+        fake_reg_reminders = [{
+            "race": six_month_race,
+            "race_date": today + timedelta(days=183),
+            "months_out": "~6 months",
+        }]
 
-    html_body = build_email_html(fake_upcoming_7, fake_upcoming_14, fake_upcoming_races, unknown_reg_races, today)
+    html_body = build_email_html(fake_upcoming_7, fake_upcoming_14, fake_upcoming_races, fake_reg_reminders, today)
 
-    subject = "[TEST] Race Registration Notifier - Email Test"
+    subject = "[TEST] Race Registration Notifier - All Sections"
     send_email(subject, html_body)
     print("\nTest passed! Check your inbox.")
 

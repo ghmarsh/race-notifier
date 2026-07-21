@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Race Calendar</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        h1 { color: #1a1a1a; margin-bottom: 8px; }
+        .subtitle { color: #666; margin-bottom: 20px; }
+        .filters { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+        .filters select, .filters input { padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; }
+        .filters input { flex: 1; min-width: 200px; }
+        .race-count { color: #666; margin-bottom: 15px; font-size: 14px; }
+        .race-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 18px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .race-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .race-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+        .race-name { font-size: 18px; font-weight: 600; color: #2c3e50; }
+        .race-name a { color: #2c3e50; text-decoration: none; }
+        .race-name a:hover { color: #3498db; }
+        .category-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; text-transform: uppercase; }
+        .category-badge.ultra { background: #e8f5e9; color: #2e7d32; }
+        .category-badge.marathon { background: #e3f2fd; color: #1565c0; }
+        .category-badge.other { background: #f3e5f5; color: #7b1fa2; }
+        .race-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; font-size: 14px; color: #555; }
+        .race-details .detail { display: flex; flex-direction: column; }
+        .race-details .label { font-weight: 600; color: #333; font-size: 12px; text-transform: uppercase; letter-spacing: 0.3px; }
+        .race-details .value { margin-top: 2px; }
+        .race-notes { margin-top: 10px; font-size: 13px; color: #666; font-style: italic; border-top: 1px solid #f0f0f0; padding-top: 8px; }
+        .elevation-list { list-style: none; padding: 0; }
+        .elevation-list li { font-size: 13px; }
+        .reg-type { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+        .reg-type.lottery { background: #fff3e0; color: #e65100; }
+        .reg-type.direct { background: #e8f5e9; color: #2e7d32; }
+        .no-results { text-align: center; color: #999; padding: 40px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Race Calendar</h1>
+        <p class="subtitle">All tracked races from races.json</p>
+
+        <div class="filters">
+            <select id="category-filter">
+                <option value="all">All Categories</option>
+                <option value="ultra">Ultras</option>
+                <option value="marathon">Marathons</option>
+                <option value="other">Other</option>
+            </select>
+            <select id="sort-by">
+                <option value="race_date">Sort by Race Date</option>
+                <option value="registration_date">Sort by Registration Date</option>
+                <option value="name">Sort by Name</option>
+            </select>
+            <input type="text" id="search" placeholder="Search races...">
+        </div>
+
+        <div class="race-count" id="race-count"></div>
+        <div id="races-container"></div>
+    </div>
+
+    <script>
+        let allRaces = [];
+
+        function monthDayToDate(mmdd) {
+            if (!mmdd) return null;
+            const [month, day] = mmdd.split('-').map(Number);
+            const today = new Date();
+            let d = new Date(today.getFullYear(), month - 1, day);
+            if (d < today) {
+                d = new Date(today.getFullYear() + 1, month - 1, day);
+            }
+            return d;
+        }
+
+        function formatDate(mmdd) {
+            if (!mmdd) return 'TBD';
+            const d = monthDayToDate(mmdd);
+            return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+        }
+
+        function formatElevation(race) {
+            const elev = race.elevation_gain_ft;
+            if (!elev) return race.elevation_notes || 'N/A';
+            if (typeof elev === 'object') {
+                return Object.entries(elev).map(([dist, gain]) => `${dist}: ${gain.toLocaleString()} ft`).join(', ');
+            }
+            return `${elev.toLocaleString()} ft`;
+        }
+
+        function renderRaces() {
+            const category = document.getElementById('category-filter').value;
+            const sortBy = document.getElementById('sort-by').value;
+            const search = document.getElementById('search').value.toLowerCase();
+
+            let filtered = allRaces.filter(race => {
+                if (category !== 'all' && race.category !== category) return false;
+                if (search && !race.name.toLowerCase().includes(search) &&
+                    !race.city.toLowerCase().includes(search) &&
+                    !race.state_or_country.toLowerCase().includes(search)) return false;
+                return true;
+            });
+
+            filtered.sort((a, b) => {
+                if (sortBy === 'name') return a.name.localeCompare(b.name);
+                if (sortBy === 'race_date') {
+                    const da = monthDayToDate(a.race_date);
+                    const db = monthDayToDate(b.race_date);
+                    if (!da) return 1;
+                    if (!db) return -1;
+                    return da - db;
+                }
+                if (sortBy === 'registration_date') {
+                    const da = monthDayToDate(a.registration_date);
+                    const db = monthDayToDate(b.registration_date);
+                    if (!da) return 1;
+                    if (!db) return -1;
+                    return da - db;
+                }
+                return 0;
+            });
+
+            document.getElementById('race-count').textContent = `Showing ${filtered.length} of ${allRaces.length} races`;
+
+            const container = document.getElementById('races-container');
+            if (filtered.length === 0) {
+                container.innerHTML = '<div class="no-results">No races match your filters.</div>';
+                return;
+            }
+
+            container.innerHTML = filtered.map(race => `
+                <div class="race-card">
+                    <div class="race-header">
+                        <div class="race-name"><a href="${race.website}" target="_blank">${race.name}</a></div>
+                        <span class="category-badge ${race.category}">${race.category}</span>
+                    </div>
+                    <div class="race-details">
+                        <div class="detail">
+                            <span class="label">Race Date</span>
+                            <span class="value">${formatDate(race.race_date)}${race.race_date_end && race.race_date_end !== race.race_date ? ' - ' + formatDate(race.race_date_end) : ''}</span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Registration</span>
+                            <span class="value">${race.registration_date ? formatDate(race.registration_date) : 'TBD'} <span class="reg-type ${race.registration_type}">${race.registration_type}</span></span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Location</span>
+                            <span class="value">${race.city}, ${race.state_or_country}</span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Distances</span>
+                            <span class="value">${race.distances.join(', ')}</span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Elevation</span>
+                            <span class="value">${formatElevation(race)}</span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Terrain</span>
+                            <span class="value">${race.terrain}</span>
+                        </div>
+                    </div>
+                    ${race.notes ? `<div class="race-notes">${race.notes}</div>` : ''}
+                </div>
+            `).join('');
+        }
+
+        document.getElementById('category-filter').addEventListener('change', renderRaces);
+        document.getElementById('sort-by').addEventListener('change', renderRaces);
+        document.getElementById('search').addEventListener('input', renderRaces);
+
+        fetch('races.json')
+            .then(r => r.json())
+            .then(data => {
+                allRaces = data.races;
+                renderRaces();
+            })
+            .catch(err => {
+                document.getElementById('races-container').innerHTML =
+                    '<div class="no-results">Error loading races.json. If viewing locally, use a local server: python -m http.server</div>';
+            });
+    </script>
+</body>
+</html>
