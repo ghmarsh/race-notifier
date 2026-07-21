@@ -14,7 +14,7 @@ from datetime import date, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from notify import load_races, build_email_html, send_email, load_recipients
+from notify import load_races, build_email_html, send_email, load_recipients, find_upcoming_races
 
 
 def main():
@@ -40,19 +40,22 @@ def main():
 
     fake_upcoming_7 = []
     fake_upcoming_14 = []
+    fake_upcoming_races = []
     count = 0
     for race in races:
         if count == 0:
             fake_upcoming_7.append({"race": race, "reg_date": today + timedelta(days=3), "days_until": 3})
         elif count == 1:
             fake_upcoming_14.append({"race": race, "reg_date": today + timedelta(days=10), "days_until": 10})
-        if count >= 1:
+        elif count == 2:
+            fake_upcoming_races.append({"race": race, "race_date": today + timedelta(days=18), "days_until": 18})
+        if count >= 2:
             break
         count += 1
 
     unknown_reg_races = [r for r in races if not r.get("registration_date")][:2]
 
-    html_body = build_email_html(fake_upcoming_7, fake_upcoming_14, unknown_reg_races, today)
+    html_body = build_email_html(fake_upcoming_7, fake_upcoming_14, fake_upcoming_races, unknown_reg_races, today)
 
     subject = "[TEST] Race Registration Notifier - Email Test"
     send_email(subject, html_body)

@@ -31,6 +31,23 @@ def find_upcoming_registrations(races, today, window_days):
     return sorted(upcoming, key=lambda x: x["days_until"])
 
 
+def find_upcoming_races(races, today, window_days):
+    window_end = today + timedelta(days=window_days)
+    upcoming = []
+    for race in races:
+        race_date_str = race.get("race_date")
+        if not race_date_str:
+            continue
+        try:
+            race_date = datetime.strptime(race_date_str, "%Y-%m-%d").date()
+        except ValueError:
+            continue
+        if today <= race_date <= window_end:
+            days_until = (race_date - today).days
+            upcoming.append({"race": race, "race_date": race_date, "days_until": days_until})
+    return sorted(upcoming, key=lambda x: x["days_until"])
+
+
 def find_unknown_registration_dates(races):
     unknown = []
     for race in races:
@@ -49,7 +66,7 @@ def format_elevation(race):
     return f"{elev} ft"
 
 
-def build_email_html(upcoming_7, upcoming_14, unknown_reg_races, today):
+def build_email_html(upcoming_7, upcoming_14, upcoming_races, unknown_reg_races, today):
     html = f"""
     <html>
     <head>
@@ -93,7 +110,7 @@ def build_email_html(upcoming_7, upcoming_14, unknown_reg_races, today):
                 </div>
                 <div class="race-meta">
                     <strong>Registration Opens:</strong> {item['reg_date'].strftime('%B %d, %Y')}<br>
-                    <strong>Race Date:</strong> {race.get('race_date_notes', 'TBD')}<br>
+                    <strong>Race Date:</strong> {race.get('race_date', 'TBD')}<br>
                     <strong>Location:</strong> {race.get('city', '')}, {race.get('state_or_country', '')}<br>
                     <strong>Distances:</strong> {', '.join(race.get('distances', []))}<br>
                     <strong>Elevation:</strong> {format_elevation(race)}<br>
@@ -118,7 +135,7 @@ def build_email_html(upcoming_7, upcoming_14, unknown_reg_races, today):
                 </div>
                 <div class="race-meta">
                     <strong>Registration Opens:</strong> {item['reg_date'].strftime('%B %d, %Y')}<br>
-                    <strong>Race Date:</strong> {race.get('race_date_notes', 'TBD')}<br>
+                    <strong>Race Date:</strong> {race.get('race_date', 'TBD')}<br>
                     <strong>Location:</strong> {race.get('city', '')}, {race.get('state_or_country', '')}<br>
                     <strong>Distances:</strong> {', '.join(race.get('distances', []))}<br>
                     <strong>Elevation:</strong> {format_elevation(race)}<br>
@@ -129,11 +146,33 @@ def build_email_html(upcoming_7, upcoming_14, unknown_reg_races, today):
             </div>
             """
 
+    if upcoming_races:
+        html += '<h2>Races Coming Up (Next 14 Days)</h2>'
+        for item in upcoming_races:
+            race = item["race"]
+            days = item["days_until"]
+            html += f"""
+            <div class="race-card">
+                <div class="race-name">
+                    {race['name']}
+                    <span class="days-badge soon">{days} day{'s' if days != 1 else ''}</span>
+                </div>
+                <div class="race-meta">
+                    <strong>Race Date:</strong> {item['race_date'].strftime('%B %d, %Y')}<br>
+                    <strong>Location:</strong> {race.get('city', '')}, {race.get('state_or_country', '')}<br>
+                    <strong>Distances:</strong> {', '.join(race.get('distances', []))}<br>
+                    <strong>Elevation:</strong> {format_elevation(race)}<br>
+                    <strong>Website:</strong> <a href="{race.get('website', '#')}">{race.get('website', 'N/A')}</a><br>
+                    {f"<strong>Notes:</strong> {race.get('notes', '')}" if race.get('notes') else ''}
+                </div>
+            </div>
+            """
+
     if unknown_reg_races:
         html += """
         <h2>Races to Watch (Unknown Registration Dates)</h2>
         <div class="warning">
-            These races sell out quickly but don't have confirmed registration dates. Check their websites regularly.
+            These races don't have confirmed registration dates. Check their websites regularly.
         </div>
         """
         for race in unknown_reg_races:
@@ -141,18 +180,18 @@ def build_email_html(upcoming_7, upcoming_14, unknown_reg_races, today):
             <div class="race-card">
                 <div class="race-name">{race['name']}</div>
                 <div class="race-meta">
-                    <strong>Race Date:</strong> {race.get('race_date_notes', 'TBD')}<br>
+                    <strong>Race Date:</strong> {race.get('race_date', 'TBD')}<br>
                     <strong>Location:</strong> {race.get('city', '')}, {race.get('state_or_country', '')}<br>
-                    <strong>Registration Info:</strong> {race.get('registration_date_notes', 'Unknown')}<br>
+                    <strong>Distances:</strong> {', '.join(race.get('distances', []))}<br>
                     <strong>Website:</strong> <a href="{race.get('website', '#')}">{race.get('website', 'N/A')}</a>
                 </div>
             </div>
             """
 
-    if not upcoming_7 and not only_14 and not unknown_reg_races:
+    if not upcoming_7 and not only_14 and not upcoming_races and not unknown_reg_races:
         html += """
         <p style="color: #666; font-style: italic; margin: 30px 0;">
-            No race registrations opening in the next 14 days, and no unknown-date races that sell out quickly. You're all clear!
+            No upcoming registrations or races in the next 14 days. You're all clear!
         </p>
         """
 
@@ -208,26 +247,29 @@ def main():
 
     upcoming_7 = find_upcoming_registrations(races, today, 7)
     upcoming_14 = find_upcoming_registrations(races, today, 14)
+    upcoming_races = find_upcoming_races(races, today, 14)
     unknown_reg_races = find_unknown_registration_dates(races)
 
-    has_content = upcoming_7 or upcoming_14 or unknown_reg_races
+    has_content = upcoming_7 or upcoming_14 or upcoming_races or unknown_reg_races
 
     if not has_content:
-        print("No upcoming registrations and no unknown-date races to watch. No email sent.")
+        print("No upcoming registrations or races. No email sent.")
         return
 
-    html_body = build_email_html(upcoming_7, upcoming_14, unknown_reg_races, today)
+    html_body = build_email_html(upcoming_7, upcoming_14, upcoming_races, unknown_reg_races, today)
 
     if upcoming_7:
         subject = f"🏃 Race Alert: {len(upcoming_7)} registration(s) opening THIS WEEK!"
     elif upcoming_14:
         only_14 = [item for item in upcoming_14 if item["days_until"] > 7]
         subject = f"🏃 Race Alert: {len(only_14)} registration(s) opening in 8-14 days"
+    elif upcoming_races:
+        subject = f"🏃 Race Alert: {len(upcoming_races)} race(s) coming up in the next 14 days"
     else:
         subject = "🏃 Race Alert: Races to watch (unknown registration dates)"
 
     send_email(subject, html_body)
-    print(f"Notified about {len(upcoming_14)} upcoming registration(s) and {len(unknown_reg_races)} unknown-date race(s).")
+    print(f"Notified about {len(upcoming_14)} registration(s), {len(upcoming_races)} upcoming race(s), and {len(unknown_reg_races)} unknown-date race(s).")
 
 
 if __name__ == "__main__":
