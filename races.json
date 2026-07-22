@@ -4,13 +4,24 @@
       "name": "Ultra-X Scotland",
       "category": "ultra",
       "website": "https://ultra-x.co/event/ultra-marathon-in-scotland/",
-      "registration_url": "https://www.race-space.com/gb/ultra-x/ultra-x-scotland-2027",
       "race_date": "05-01",
       "race_date_end": "05-02",
       "registration_date": "04-26",
       "registration_type": "direct",
-      "distances": ["100 mile", "110km single-stage", "110km multi-stage", "60km", "50km", "25km", "12km"],
-      "elevation_gain_ft": {"100 mile": 11971, "110K": 9580, "60K": 4924,"50k": 4655, "25k": 1473},
+      "distances": [
+        "100 mile",
+        "110km",
+        "60km",
+        "50km",
+        "25km",
+        "12km"
+      ],
+      "elevation_gain_ft": {
+        "100 mile": 11971,
+        "110K": 9580,
+        "60K": 4924,
+        "50k": 4655
+      },
       "elevation_notes": "Difficulty 2/6, Technicality 2/5. Runs along Loch Ness and Scottish Highlands.",
       "city": "Inverness",
       "state_or_country": "Scotland, UK",
@@ -21,13 +32,23 @@
       "name": "Great Divide Ultra",
       "category": "ultra",
       "website": "https://revenantrunning.com/race/the-great-divide-ultra/",
-      "registration_url": "https://revenantrunning.com/race/the-great-divide-ultra/",
       "race_date": "06-06",
       "race_date_end": "06-07",
       "registration_date": null,
       "registration_type": "direct",
-      "distances": ["100 mile", "100K", "50K", "25K", "Night 50K", "Night 25K"],
-      "elevation_gain_ft": {"100 mile": 16071, "100K": 8500, "50K": 4200},
+      "distances": [
+        "100 mile",
+        "100K",
+        "50K",
+        "25K",
+        "Night 50K",
+        "Night 25K"
+      ],
+      "elevation_gain_ft": {
+        "100 mile": 16071,
+        "100K": 8500,
+        "50K": 4200
+      },
       "elevation_notes": "Significant climbing at altitude in Mueller State Park",
       "city": "Divide",
       "state_or_country": "Colorado",
@@ -38,13 +59,18 @@
       "name": "Cody Peak 50K (Teton Mountain Runs)",
       "category": "ultra",
       "website": "https://www.tetonmountainruns.com/",
-      "registration_url": "https://www.tetonmountainruns.com/",
-      "race_date": "07-11",
-      "race_date_end": "07-12",
+      "race_date": "07-10",
+      "race_date_end": "07-11",
       "registration_date": null,
       "registration_type": "direct",
-      "distances": ["50K (Cody Peak)", "30K (Cirque)", "15K (Wild)"],
-      "elevation_gain_ft": {"50K": 9700},
+      "distances": [
+        "50K",
+        "30K",
+        "15K"
+      ],
+      "elevation_gain_ft": {
+        "50K": 9700
+      },
       "elevation_notes": "~9,700 ft total gain for 50K. Summits Cody Peak and Rendezvous Mountain.",
       "city": "Teton Village (Jackson Hole)",
       "state_or_country": "Wyoming",
@@ -55,13 +81,18 @@
       "name": "Cayuga Trails 50",
       "category": "ultra",
       "website": "https://www.rednewtracing.com/cayuga-trails",
-      "registration_url": "https://www.rednewtracing.com/cayuga-trails",
-      "race_date": "05-30",
-      "race_date_end": "05-30",
-      "registration_date": "10-01",
+      "race_date": "06-05",
+      "race_date_end": "06-05",
+      "registration_date": "10-15",
       "registration_type": "direct",
-      "distances": ["50 mile", "50K"],
-      "elevation_gain_ft": {"50 mile": 10203, "50K": 6882},
+      "distances": [
+        "50 mile",
+        "50K"
+      ],
+      "elevation_gain_ft": {
+        "50 mile": 10203,
+        "50K": 6882
+      },
       "elevation_notes": "Very technical East Coast trail with gorges, waterfalls, and historic stone stairs. ~95% trail.",
       "city": "Ithaca",
       "state_or_country": "New York",
@@ -72,13 +103,16 @@
       "name": "McKenzie River Trail Run",
       "category": "ultra",
       "website": "https://mrtr.org/",
-      "registration_url": "https://mrtr.org/race-details/",
       "race_date": "06-13",
       "race_date_end": "06-13",
       "registration_date": "01-01",
       "registration_type": "direct",
-      "distances": ["31 miles"],
-      "elevation_gain_ft": {"31 miles": 2350},
+      "distances": [
+        "50k"
+      ],
+      "elevation_gain_ft": {
+        "50k": 2350
+      },
       "elevation_notes": "~2,200-2,500 ft gain. Very runnable point-to-point trail.",
       "city": "Blue River",
       "state_or_country": "Oregon",
@@ -89,13 +123,19 @@
       "name": "Kettle Moraine",
       "category": "ultra",
       "website": "https://kettlemoraine100.com/",
-      "registration_url": "https://kettlemoraine100.com/",
       "race_date": "06-13",
       "race_date_end": "06-13",
       "registration_date": "12-01",
       "registration_type": "lottery",
-      "distances": ["100 mile", "100K", "50K", "38 mile"],
-      "elevation_gain_ft": {"50K": 2700},
+      "distances": [
+        "100 mile",
+        "100K",
+        "50K",
+        "38 mile"
+      ],
+      "elevation_gain_ft": {
+        "100 mile": 8801
+      },
       "elevation_notes": "Rolling terrain, moderate climbing on Ice Age Trail.",
       "city": "La Grange",
       "state_or_country": "Wisconsin",
@@ -106,13 +146,19 @@
       "name": "Speedgoat 50K",
       "category": "ultra",
       "website": "https://speedgoat.utmb.world/",
-      "registration_url": "https://speedgoat.utmb.world/",
       "race_date": "07-23",
       "race_date_end": "07-25",
       "registration_date": null,
       "registration_type": "direct",
-      "distances": ["50K", "30K", "10K", "5K"],
-      "elevation_gain_ft": {"50K": 11000},
+      "distances": [
+        "50K",
+        "30K",
+        "10K",
+        "5K"
+      ],
+      "elevation_gain_ft": {
+        "50K": 11000
+      },
       "elevation_notes": "~11,000+ ft gain. Very steep, technical mountain terrain at Snowbird ski resort.",
       "city": "Snowbird (Sandy)",
       "state_or_country": "Utah",
@@ -122,14 +168,20 @@
     {
       "name": "Grand Targhee Wildflower 50K",
       "category": "ultra",
-      "website": "https://www.grandtarghee.com/event/wildflower-trail-run/",
-      "registration_url": "https://www.grandtarghee.com/event/wildflower-trail-run/",
-      "race_date": "07-10",
-      "race_date_end": "07-10",
+      "website": "https://runsignup.com/Race/WY/Alta/GrandTargheetrailrun",
+      "race_date": "07-04",
+      "race_date_end": "07-05",
       "registration_date": null,
       "registration_type": "direct",
-      "distances": ["50K", "22K", "20K", "1K"],
-      "elevation_gain_ft": {"50K": 4400},
+      "distances": [
+        "50K",
+        "22K",
+        "20K",
+        "1K"
+      ],
+      "elevation_gain_ft": {
+        "50K": 4400
+      },
       "elevation_notes": "High-elevation mountain course with significant climbing at Grand Targhee Resort.",
       "city": "Alta",
       "state_or_country": "Wyoming",
@@ -140,13 +192,18 @@
       "name": "Wy'east Wonder",
       "category": "ultra",
       "website": "https://gobeyondracing.com/races/wyeast-wonder/",
-      "registration_url": "https://gobeyondracing.com/races/wyeast-wonder/",
       "race_date": "06-27",
       "race_date_end": "06-27",
       "registration_date": "12-01",
       "registration_type": "direct",
-      "distances": ["50 mile", "50K"],
-      "elevation_gain_ft": {"50K": 4300, "50 mile": 7600},
+      "distances": [
+        "50 mile",
+        "50K"
+      ],
+      "elevation_gain_ft": {
+        "50K": 4300,
+        "50 mile": 7600
+      },
       "elevation_notes": "50K: 4,300' gain / 7,200' loss. 50M: 7,600' gain / 10,600' loss. Point-to-point on Mt Hood ridges.",
       "city": "Mt. Hood",
       "state_or_country": "Oregon",
@@ -157,13 +214,18 @@
       "name": "Catamount Ultra",
       "category": "ultra",
       "website": "https://www.ironwoodadventureworks.com/catamount-ultra",
-      "registration_url": "https://www.ironwoodadventureworks.com/catamount-ultra",
       "race_date": "06-20",
       "race_date_end": "06-20",
       "registration_date": null,
       "registration_type": "direct",
-      "distances": ["50K", "25K"],
-      "elevation_gain_ft": {"50K": 5000},
+      "distances": [
+        "50K",
+        "25K"
+      ],
+      "elevation_gain_ft": {
+        "50K": 5000,
+        "25K": 2500
+      },
       "elevation_notes": "~5,000 ft total gain/loss for 50K (two loops of 25K course). 9-hour cutoff.",
       "city": "Stowe",
       "state_or_country": "Vermont",
@@ -174,47 +236,65 @@
       "name": "Pico Duarte Ultra",
       "category": "ultra",
       "website": "https://picoduarteultra.com/",
-      "registration_url": "https://picoduarteultra.com/",
       "race_date": "12-04",
       "race_date_end": "12-05",
       "registration_date": null,
       "registration_type": "direct",
-      "distances": ["100K", "62K", "~48K"],
-      "elevation_gain_ft": {"100K": 23600, "62K": 15500},
+      "distances": [
+        "100K",
+        "62K",
+        "46K"
+      ],
+      "elevation_gain_ft": {
+        "100K": 20341,
+        "62K": 15583,
+        "46K": 11089
+      },
       "elevation_notes": "Massive elevation gain. 100K: ~23,600 ft. 62K: ~15,500 ft. Cordillera Central mountains.",
       "city": "La Cienaga de Manabao",
       "state_or_country": "Dominican Republic",
       "terrain": "mountain trail",
-      "notes": "Summits Pico Duarte, the highest peak in the Caribbean. Jarabacoa region."
+      "notes": "Summits Pico Duarte, the highest peak in the Caribbean. Jarabacoa region. 46K is a run up the summit and down."
     },
     {
       "name": "Ghost Train Rail Trail Race",
       "category": "ultra",
-      "website": "https://ghosttrainrailtrailraces.com/",
-      "registration_url": "https://ghosttrainrailtrailraces.com/",
-      "race_date": "10-18",
-      "race_date_end": "10-19",
+      "website": "https://sites.google.com/site/ghosttrainrailtrailrace/",
+      "race_date": "10-17",
+      "race_date_end": "10-18",
       "registration_date": "01-31",
       "registration_type": "direct",
-      "distances": ["Any increment of 15 miles", "2-person 15 mile relay"],
-      "elevation_gain_ft": {"15 miles": 300},
+      "distances": [
+        "30 hour",
+        "30 mile",
+        "15 mile",
+        "2-person 15 mile relay"
+      ],
+      "elevation_gain_ft": {
+        "15 miles": 300
+      },
       "elevation_notes": "~300 ft per 15-mile loop. Very flat rail trail.",
       "city": "Brookline",
       "state_or_country": "New Hampshire",
       "terrain": "rail trail",
-      "notes": "Unique format: choose any increment of 15 miles. Extremely popular, sells out almost instantly on registration day."
+      "notes": "Spooky race! Unique format: choose any increment of 15 miles. Extremely popular, sells out almost instantly on registration day."
     },
     {
       "name": "Charlotte Marathon",
       "category": "marathon",
       "website": "https://thecharlottemarathon.com/",
-      "registration_url": "https://thecharlottemarathon.com/",
       "race_date": "11-14",
       "race_date_end": "11-14",
       "registration_date": "01-12",
       "registration_type": "direct",
-      "distances": ["Marathon"],
-      "elevation_gain_ft": {"Marathon": 1040},
+      "distances": [
+        "Marathon",
+        "Half Marathon",
+        "5k"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 1040
+      },
       "elevation_notes": "~1,040 ft total gain. Rolling, consistently hilly course.",
       "city": "Charlotte",
       "state_or_country": "North Carolina",
@@ -225,13 +305,20 @@
       "name": "Twin Cities Marathon",
       "category": "marathon",
       "website": "https://www.tcmevents.org/",
-      "registration_url": "https://www.tcmevents.org/",
-      "race_date": "10-04",
+      "race_date": "10-03",
       "race_date_end": "10-04",
       "registration_date": "03-03",
       "registration_type": "direct",
-      "distances": ["Marathon"],
-      "elevation_gain_ft": {"Marathon": 550},
+      "distances": [
+        "Marathon",
+        "Half Marathon",
+        "10 mile",
+        "10K",
+        "5k"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 550
+      },
       "elevation_notes": "Mostly flat to gently rolling. Notable hills around miles 20-23 (~550 ft total).",
       "city": "Minneapolis to Saint Paul",
       "state_or_country": "Minnesota",
@@ -242,13 +329,17 @@
       "name": "Detroit Free Press Marathon",
       "category": "marathon",
       "website": "https://www.freepmarathon.com/",
-      "registration_url": "https://www.freepmarathon.com/",
-      "race_date": "10-18",
+      "race_date": "10-17",
       "race_date_end": "10-18",
       "registration_date": "01-01",
       "registration_type": "direct",
-      "distances": ["Marathon"],
-      "elevation_gain_ft": {"Marathon": 388},
+      "distances": [
+        "Marathon",
+        "Half Marathon"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 388
+      },
       "elevation_notes": "Mostly flat. ~388 ft gain with bridge and tunnel climbs.",
       "city": "Detroit",
       "state_or_country": "Michigan",
@@ -259,14 +350,19 @@
       "name": "Philadelphia Marathon",
       "category": "marathon",
       "website": "https://www.philadelphiamarathon.com/",
-      "registration_url": "https://www.philadelphiamarathon.com/",
-      "race_date": "11-22",
+      "race_date": "11-21",
       "race_date_end": "11-22",
       "registration_date": "01-20",
       "registration_type": "direct",
-      "distances": ["Marathon"],
-      "elevation_gain_ft": {"Marathon": 300},
-      "elevation_notes": "Flat and fast. ~300 ft total gain.",
+      "distances": [
+        "Marathon",
+        "Half Marathon",
+        "8k"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 439
+      },
+      "elevation_notes": "Flat and fast.",
       "city": "Philadelphia",
       "state_or_country": "Pennsylvania",
       "terrain": "road",
@@ -276,13 +372,16 @@
       "name": "Berlin Marathon",
       "category": "marathon",
       "website": "https://www.bmw-berlin-marathon.com/",
-      "registration_url": "https://www.bmw-berlin-marathon.com/",
       "race_date": "09-27",
       "race_date_end": "09-27",
-      "registration_date": "09-01",
+      "registration_date": "09-25",
       "registration_type": "lottery",
-      "distances": ["Marathon"],
-      "elevation_gain_ft": {"Marathon": 100},
+      "distances": [
+        "Marathon"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 241
+      },
       "elevation_notes": "Extremely flat. One of the flattest major marathons in the world.",
       "city": "Berlin",
       "state_or_country": "Germany",
@@ -293,13 +392,16 @@
       "name": "Chicago Marathon",
       "category": "marathon",
       "website": "https://www.chicagomarathon.com/",
-      "registration_url": "https://www.chicagomarathon.com/",
       "race_date": "10-11",
       "race_date_end": "10-11",
       "registration_date": "10-21",
       "registration_type": "lottery",
-      "distances": ["Marathon"],
-      "elevation_gain_ft": {"Marathon": 180},
+      "distances": [
+        "Marathon"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 187
+      },
       "elevation_notes": "Very flat. ~180 ft gain.",
       "city": "Chicago",
       "state_or_country": "Illinois",
@@ -310,30 +412,38 @@
       "name": "Marine Corps Marathon",
       "category": "marathon",
       "website": "https://www.marinemarathon.com/",
-      "registration_url": "https://www.marinemarathon.com/",
       "race_date": "10-25",
       "race_date_end": "10-25",
       "registration_date": "04-06",
       "registration_type": "direct",
-      "distances": ["Marathon"],
-      "elevation_gain_ft": {"Marathon": 700},
+      "distances": [
+        "Marathon"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 700
+      },
       "elevation_notes": "Rolling, moderately hilly compared to flat races. ~700 ft total gain.",
       "city": "Arlington, VA & Washington, D.C.",
       "state_or_country": "Virginia / D.C.",
       "terrain": "road",
-      "notes": "Known as 'The People's Marathon.' No prize money. Passes major D.C. monuments. Often sells out on registration day."
+      "notes": "Known as 'The People's Marathon.' No prize money. Passes major D.C. monuments."
     },
     {
       "name": "Indianapolis Monumental Marathon",
       "category": "marathon",
       "website": "https://www.monumentalmarathon.com/",
-      "registration_url": "https://www.monumentalmarathon.com/",
       "race_date": "11-07",
       "race_date_end": "11-07",
       "registration_date": "01-01",
       "registration_type": "direct",
-      "distances": ["Marathon"],
-      "elevation_gain_ft": {"Marathon": 300},
+      "distances": [
+        "Marathon",
+        "Half Marathon",
+        "5K"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 300
+      },
       "elevation_notes": "Flat and fast. ~300 ft total gain.",
       "city": "Indianapolis",
       "state_or_country": "Indiana",
@@ -344,13 +454,18 @@
       "name": "Wineglass Marathon",
       "category": "marathon",
       "website": "https://www.wineglassmarathon.com/",
-      "registration_url": "https://www.wineglassmarathon.com/",
-      "race_date": "10-04",
+      "race_date": "10-03",
       "race_date_end": "10-04",
       "registration_date": "12-01",
       "registration_type": "direct",
-      "distances": ["Marathon"],
-      "elevation_gain_ft": {"Marathon": -200},
+      "distances": [
+        "Marathon",
+        "Half Marathon",
+        "5k"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 392
+      },
       "elevation_notes": "Net downhill (~200 ft drop). Very fast course.",
       "city": "Bath to Corning",
       "state_or_country": "New York",
@@ -361,13 +476,16 @@
       "name": "New York City Marathon",
       "category": "marathon",
       "website": "https://www.nyrr.org/tcsnycmarathon",
-      "registration_url": "https://www.nyrr.org/tcsnycmarathon",
       "race_date": "11-01",
       "race_date_end": "11-01",
       "registration_date": "02-04",
       "registration_type": "lottery",
-      "distances": ["Marathon"],
-      "elevation_gain_ft": {"Marathon": 810},
+      "distances": [
+        "Marathon"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 810
+      },
       "elevation_notes": "~810 ft total gain. Rolling, bridge-heavy course.",
       "city": "New York City",
       "state_or_country": "New York",
@@ -378,13 +496,16 @@
       "name": "London Marathon",
       "category": "marathon",
       "website": "https://www.londonmarathonevents.co.uk/london-marathon",
-      "registration_url": "https://www.londonmarathonevents.co.uk/london-marathon",
       "race_date": "04-24",
       "race_date_end": "04-24",
-      "registration_date": "04-24",
+      "registration_date": "04-25",
       "registration_type": "lottery",
-      "distances": ["Marathon"],
-      "elevation_gain_ft": {"Marathon": 330},
+      "distances": [
+        "Marathon"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 330
+      },
       "elevation_notes": "Largely flat course. ~330 ft total gain.",
       "city": "London",
       "state_or_country": "England, UK",
@@ -395,13 +516,16 @@
       "name": "Tokyo Marathon",
       "category": "marathon",
       "website": "https://www.marathon.tokyo/en/",
-      "registration_url": "https://www.marathon.tokyo/en/participants/",
       "race_date": "03-07",
       "race_date_end": "03-07",
       "registration_date": "08-14",
       "registration_type": "lottery",
-      "distances": ["Marathon"],
-      "elevation_gain_ft": {"Marathon": 130},
+      "distances": [
+        "Marathon"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 256
+      },
       "elevation_notes": "Very flat. ~130 ft total gain. One of the fastest courses in the world.",
       "city": "Tokyo",
       "state_or_country": "Japan",
@@ -411,31 +535,38 @@
     {
       "name": "Sydney Marathon",
       "category": "marathon",
-      "website": "https://www.sydneymarathon.com/",
-      "registration_url": "https://www.sydneymarathon.com/",
-      "race_date": "09-20",
-      "race_date_end": "09-20",
-      "registration_date": null,
-      "registration_type": "direct",
-      "distances": ["Marathon"],
-      "elevation_gain_ft": {"Marathon": 700},
+      "website": "https://www.tcssydneymarathon.com/",
+      "race_date": "08-30",
+      "race_date_end": "08-30",
+      "registration_date": "09-24",
+      "registration_type": "lottery",
+      "distances": [
+        "Marathon"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 800
+      },
       "elevation_notes": "Moderately hilly. ~650-820 ft total gain. Crosses Sydney Harbour Bridge.",
       "city": "Sydney",
       "state_or_country": "Australia",
       "terrain": "road",
-      "notes": "Abbott World Marathon Majors member. Crosses Harbour Bridge, passes Opera House, finishes in Royal Botanic Gardens. Southern Hemisphere spring race (September). Direct registration opens early in the year."
+      "notes": "Abbott World Marathon Majors member. Crosses Harbour Bridge, passes Opera House, finishes in Royal Botanic Gardens. Southern Hemisphere spring race."
     },
     {
       "name": "Cherry Blossom 10 Mile / 5K",
       "category": "other",
       "website": "https://www.cherryblossom.org/",
-      "registration_url": "https://www.cherryblossom.org/",
-      "race_date": "04-05",
-      "race_date_end": "04-05",
+      "race_date": "04-04",
+      "race_date_end": "04-04",
       "registration_date": "01-15",
       "registration_type": "lottery",
-      "distances": ["10 mile", "5K"],
-      "elevation_gain_ft": {"10 mile": 285},
+      "distances": [
+        "10 mile",
+        "5K"
+      ],
+      "elevation_gain_ft": {
+        "10 mile": 285
+      },
       "elevation_notes": "~270-300 ft gain. Flat, fast course along the Tidal Basin.",
       "city": "Washington, D.C.",
       "state_or_country": "D.C.",
@@ -445,14 +576,17 @@
     {
       "name": "BAA 5K",
       "category": "other",
-      "website": "https://www.baa.org/races/baa-5k",
-      "registration_url": "https://www.baa.org/races/baa-5k",
+      "website": "https://www.baa.org/races/boston-5k/",
       "race_date": "04-18",
       "race_date_end": "04-18",
-      "registration_date": null,
-      "registration_type": "direct",
-      "distances": ["5K"],
-      "elevation_gain_ft": {"5K": 100},
+      "registration_date": "01-26",
+      "registration_type": "lottery",
+      "distances": [
+        "5K"
+      ],
+      "elevation_gain_ft": {
+        "5K": 100
+      },
       "elevation_notes": "Generally flat to rolling.",
       "city": "Boston",
       "state_or_country": "Massachusetts",
@@ -462,14 +596,17 @@
     {
       "name": "BAA 10K",
       "category": "other",
-      "website": "https://www.baa.org/races/baa-10k",
-      "registration_url": "https://www.baa.org/races/baa-10k",
+      "website": "https://www.baa.org/races/boston-10k/",
       "race_date": "06-21",
       "race_date_end": "06-21",
-      "registration_date": null,
+      "registration_date": "03-18",
       "registration_type": "direct",
-      "distances": ["10K"],
-      "elevation_gain_ft": {"10K": 150},
+      "distances": [
+        "10K"
+      ],
+      "elevation_gain_ft": {
+        "10K": 150
+      },
       "elevation_notes": "Generally flat to rolling.",
       "city": "Boston",
       "state_or_country": "Massachusetts",
@@ -480,14 +617,17 @@
       "name": "BAA Half Marathon",
       "category": "other",
       "website": "https://www.baa.org/races/baa-half-marathon",
-      "registration_url": "https://www.baa.org/races/baa-half-marathon",
       "race_date": "11-08",
       "race_date_end": "11-08",
-      "registration_date": null,
+      "registration_date": "07-08",
       "registration_type": "direct",
-      "distances": ["Half Marathon"],
-      "elevation_gain_ft": {"Half Marathon": 300},
-      "elevation_notes": "Generally flat to rolling. Franklin Park area.",
+      "distances": [
+        "Half Marathon"
+      ],
+      "elevation_gain_ft": {
+        "Half Marathon": 480
+      },
+      "elevation_notes": "Rolling. Franklin Park area.",
       "city": "Boston",
       "state_or_country": "Massachusetts",
       "terrain": "road",
@@ -497,13 +637,17 @@
       "name": "Cambridge Half Marathon",
       "category": "other",
       "website": "https://runsignup.com/Race/MA/Cambridge/CambridgeHalfMarathon",
-      "registration_url": "https://runsignup.com/Race/MA/Cambridge/CambridgeHalfMarathon",
       "race_date": "11-01",
       "race_date_end": "11-01",
       "registration_date": null,
       "registration_type": "direct",
-      "distances": ["Half Marathon", "5K"],
-      "elevation_gain_ft": {"Half Marathon": 250},
+      "distances": [
+        "Half Marathon",
+        "5K"
+      ],
+      "elevation_gain_ft": {
+        "Half Marathon": 250
+      },
       "elevation_notes": "~200-300 ft gain. Flat, fast course along Charles River.",
       "city": "Cambridge",
       "state_or_country": "Massachusetts",
@@ -514,13 +658,19 @@
       "name": "Route 66 Marathon / Half Marathon",
       "category": "other",
       "website": "https://route66marathon.com/",
-      "registration_url": "https://route66marathon.com/",
       "race_date": "11-22",
       "race_date_end": "11-22",
       "registration_date": null,
       "registration_type": "direct",
-      "distances": ["Marathon", "Half Marathon", "5K", "Marathon Relay"],
-      "elevation_gain_ft": {"Half Marathon": 650},
+      "distances": [
+        "Marathon",
+        "Half Marathon",
+        "5K",
+        "Marathon Relay"
+      ],
+      "elevation_gain_ft": {
+        "Half Marathon": 650
+      },
       "elevation_notes": "~600-700+ ft gain. Rolling hills.",
       "city": "Tulsa",
       "state_or_country": "Oklahoma",
@@ -531,12 +681,15 @@
       "name": "Midnight Madness",
       "category": "other",
       "website": "https://tulsatrails.org/",
-      "registration_url": "https://tulsatrails.org/",
       "race_date": "07-15",
       "race_date_end": "07-15",
       "registration_date": null,
       "registration_type": "direct",
-      "distances": ["5K", "10K", "timed ultra-style events"],
+      "distances": [
+        "5K",
+        "10K",
+        "timed ultra-style events"
+      ],
       "elevation_gain_ft": null,
       "elevation_notes": "Flat loop course.",
       "city": "Tulsa",
@@ -548,13 +701,16 @@
       "name": "Falmouth Road Race",
       "category": "other",
       "website": "https://falmouthroadrace.com/",
-      "registration_url": "https://falmouthroadrace.com/",
       "race_date": "08-16",
       "race_date_end": "08-16",
       "registration_date": "05-08",
       "registration_type": "lottery",
-      "distances": ["7 mile"],
-      "elevation_gain_ft": {"7 mile": 300},
+      "distances": [
+        "7 mile"
+      ],
+      "elevation_gain_ft": {
+        "7 mile": 300
+      },
       "elevation_notes": "~300 ft gain. Short but warm and rolling seaside course.",
       "city": "Falmouth",
       "state_or_country": "Massachusetts",
@@ -565,13 +721,16 @@
       "name": "Mount Washington Road Race",
       "category": "other",
       "website": "https://mt-washington.com/mount-washington-road-race/",
-      "registration_url": "https://mt-washington.com/mount-washington-road-race/",
       "race_date": "06-27",
       "race_date_end": "06-27",
       "registration_date": "02-09",
       "registration_type": "lottery",
-      "distances": ["7.6 mile hill climb"],
-      "elevation_gain_ft": {"7.6 mile": 4650},
+      "distances": [
+        "7.6 mile hill climb"
+      ],
+      "elevation_gain_ft": {
+        "7.6 mile": 4650
+      },
       "elevation_notes": "~4,650 ft gain over 7.6 miles. Extremely steep. Average grade ~12%.",
       "city": "Gorham",
       "state_or_country": "New Hampshire",
@@ -582,13 +741,16 @@
       "name": "Harpoon 5-Miler",
       "category": "other",
       "website": "https://www.harpoonbrewery.com/",
-      "registration_url": "https://www.harpoonbrewery.com/",
       "race_date": "05-16",
       "race_date_end": "05-16",
       "registration_date": "02-01",
       "registration_type": "direct",
-      "distances": ["5 mile"],
-      "elevation_gain_ft": {"5 mile": 35},
+      "distances": [
+        "5 mile"
+      ],
+      "elevation_gain_ft": {
+        "5 mile": 35
+      },
       "elevation_notes": "~30-40 ft gain. Very flat, fast course.",
       "city": "Boston (Seaport / South Boston)",
       "state_or_country": "Massachusetts",
