@@ -30,7 +30,8 @@
       "WebFetch(domain:citius-mag.com)",
       "WebFetch(domain:www.runnersworld.com)",
       "WebFetch(domain:www.broadstreetrun.com)",
-      "WebFetch(domain:www.nyrr.org)"
+      "WebFetch(domain:www.nyrr.org)",
+      "WebFetch(domain:www.chevronhoustonmarathon.com)"
     ]
   }
 }
