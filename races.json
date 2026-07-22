@@ -625,7 +625,7 @@
         "Half Marathon"
       ],
       "elevation_gain_ft": {
-        "Half Marathon": 480
+        "Half Marathon": 587
       },
       "elevation_notes": "Rolling. Franklin Park area.",
       "city": "Boston",
@@ -637,7 +637,7 @@
       "name": "Cambridge Half Marathon",
       "category": "other",
       "website": "https://runsignup.com/Race/MA/Cambridge/CambridgeHalfMarathon",
-      "race_date": "11-01",
+      "race_date": "10-31",
       "race_date_end": "11-01",
       "registration_date": null,
       "registration_type": "direct",
@@ -656,11 +656,11 @@
     },
     {
       "name": "Route 66 Marathon / Half Marathon",
-      "category": "other",
+      "category": "marathon",
       "website": "https://route66marathon.com/",
-      "race_date": "11-22",
+      "race_date": "11-21",
       "race_date_end": "11-22",
-      "registration_date": null,
+      "registration_date": "11-24",
       "registration_type": "direct",
       "distances": [
         "Marathon",
@@ -669,33 +669,14 @@
         "Marathon Relay"
       ],
       "elevation_gain_ft": {
-        "Half Marathon": 650
+        "Marathon": 823,
+        "Half Marathon": 540
       },
-      "elevation_notes": "~600-700+ ft gain. Rolling hills.",
+      "elevation_notes": "Rolling hills.",
       "city": "Tulsa",
       "state_or_country": "Oklahoma",
       "terrain": "road",
       "notes": "Sunday before Thanksgiving weekend in Tulsa."
-    },
-    {
-      "name": "Midnight Madness",
-      "category": "other",
-      "website": "https://tulsatrails.org/",
-      "race_date": "07-15",
-      "race_date_end": "07-15",
-      "registration_date": null,
-      "registration_type": "direct",
-      "distances": [
-        "5K",
-        "10K",
-        "timed ultra-style events"
-      ],
-      "elevation_gain_ft": null,
-      "elevation_notes": "Flat loop course.",
-      "city": "Tulsa",
-      "state_or_country": "Oklahoma",
-      "terrain": "trail",
-      "notes": "Night race. Flat loop course with timed format for longer distances. Varies by year."
     },
     {
       "name": "Falmouth Road Race",
@@ -726,7 +707,7 @@
       "registration_date": "02-09",
       "registration_type": "lottery",
       "distances": [
-        "7.6 mile hill climb"
+        "7.6 mile"
       ],
       "elevation_gain_ft": {
         "7.6 mile": 4650
@@ -734,15 +715,15 @@
       "elevation_notes": "~4,650 ft gain over 7.6 miles. Extremely steep. Average grade ~12%.",
       "city": "Gorham",
       "state_or_country": "New Hampshire",
-      "terrain": "road (mountain)",
-      "notes": "One of the most iconic hill climb races in the US. Summits Mt Washington (6,288 ft). Lottery: Feb 9-23, notifications Feb 26."
+      "terrain": "road",
+      "notes": "One of the most iconic hill climb races in the US. Summits Mt Washington (6,288 ft)."
     },
     {
       "name": "Harpoon 5-Miler",
       "category": "other",
-      "website": "https://www.harpoonbrewery.com/",
-      "race_date": "05-16",
-      "race_date_end": "05-16",
+      "website": "https://www.harpoon5miler.com/",
+      "race_date": "05-15",
+      "race_date_end": "05-15",
       "registration_date": "02-01",
       "registration_type": "direct",
       "distances": [
@@ -755,7 +736,7 @@
       "city": "Boston (Seaport / South Boston)",
       "state_or_country": "Massachusetts",
       "terrain": "road",
-      "notes": "21+ event. Post-race beer at Harpoon Brewery. Benefits ALS research (Angel Fund + Pete Frates Foundation). 25th anniversary in 2026. Saturday race."
+      "notes": "21+ event. Post-race beer at Harpoon Brewery. Benefits ALS research (Angel Fund + Pete Frates Foundation). Saturday race."
     }
   ]
 }
