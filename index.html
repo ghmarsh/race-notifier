@@ -58,6 +58,7 @@
                 <option value="all">All Categories</option>
                 <option value="ultra">Ultras</option>
                 <option value="marathon">Marathons</option>
+                <option value="half">Half Marathons</option>
                 <option value="other">Other</option>
             </select>
             <select id="sort-by">
@@ -156,7 +157,11 @@
             const search = document.getElementById('search').value.toLowerCase();
 
             let filtered = allRaces.filter(race => {
-                if (category !== 'all' && race.category !== category) return false;
+                if (category === 'half') {
+                    if (!race.distances.some(d => d.toLowerCase().includes('half'))) return false;
+                } else if (category !== 'all' && race.category !== category) {
+                    return false;
+                }
                 if (search && !race.name.toLowerCase().includes(search) &&
                     !race.city.toLowerCase().includes(search) &&
                     !race.state_or_country.toLowerCase().includes(search)) return false;

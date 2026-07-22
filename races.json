@@ -655,7 +655,7 @@
       "notes": "Starts/finishes at CambridgeSide. Course along Memorial Drive with views of MIT, Harvard. Over $1.7M donated to charity since 2017."
     },
     {
-      "name": "Route 66 Marathon / Half Marathon",
+      "name": "Route 66 Marathon",
       "category": "marathon",
       "website": "https://route66marathon.com/",
       "race_date": "11-21",
@@ -839,6 +839,240 @@
       "state_or_country": "Colorado",
       "terrain": "trail",
       "notes": "Shortest race in the Leadville Race Series. Held during LT100 race week. Not a qualifier event."
+    },
+    {
+      "name": "Grandma's Marathon",
+      "category": "marathon",
+      "website": "https://grandmasmarathon.com/",
+      "race_date": "06-18",
+      "race_date_end": "06-19",
+      "registration_date": "10-01",
+      "registration_type": "direct",
+      "distances": [
+        "Marathon",
+        "Half Marathon",
+        "5K"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 557
+      },
+      "elevation_notes": "Point-to-point, net downhill from Two Harbors to Duluth along the North Shore of Lake Superior.",
+      "city": "Duluth",
+      "state_or_country": "Minnesota",
+      "terrain": "road",
+      "notes": "Point-to-point along scenic North Shore of Lake Superior. Fast BQ course. ~9,000 marathon runners."
+    },
+    {
+      "name": "Hamptons Marathon",
+      "category": "marathon",
+      "website": "https://hamptonsmarathon.com/",
+      "race_date": "09-26",
+      "race_date_end": "09-26",
+      "registration_date": null,
+      "registration_type": "direct",
+      "distances": [
+        "Marathon",
+        "Half Marathon",
+        "5K"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 182,
+        "Half Marathon": 54
+      },
+      "elevation_notes": "Flat, fast course on the East End of Long Island.",
+      "city": "Southampton",
+      "state_or_country": "New York",
+      "terrain": "road",
+      "notes": "Late September on Long Island's East End. Flat and scenic."
+    },
+    {
+      "name": "Broad Street Run",
+      "category": "other",
+      "website": "https://www.broadstreetrun.com/run/",
+      "race_date": "05-03",
+      "race_date_end": "05-03",
+      "registration_date": "02-01",
+      "registration_type": "lottery",
+      "distances": [
+        "10 mile"
+      ],
+      "elevation_gain_ft": {
+        "10 mile": 163
+      },
+      "elevation_notes": "Nearly flat, slightly net downhill point-to-point along Broad Street.",
+      "city": "Philadelphia",
+      "state_or_country": "Pennsylvania",
+      "terrain": "road",
+      "notes": "Largest 10-mile road race in the US (~40,000 runners). First Sunday in May. Point-to-point from Central High School to the Navy Yard. Lottery registration."
+    },
+    {
+      "name": "Eugene Marathon",
+      "category": "marathon",
+      "website": "https://www.eugenemarathon.com/",
+      "race_date": "04-24",
+      "race_date_end": "04-25",
+      "registration_date": "09-01",
+      "registration_type": "direct",
+      "distances": [
+        "Marathon",
+        "Half Marathon",
+        "5K"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 487,
+        "Half Marathon": 395
+      },
+      "elevation_notes": "Mostly flat along Willamette River bike paths with some rolling sections.",
+      "city": "Eugene",
+      "state_or_country": "Oregon",
+      "terrain": "road",
+      "notes": "BQ qualifying, USATF certified. TrackTown USA. Starts at Autzen Stadium, runs along Willamette River."
+    },
+    {
+      "name": "Oklahoma City Memorial Marathon",
+      "category": "marathon",
+      "website": "https://okcmarathon.com/",
+      "race_date": "04-23",
+      "race_date_end": "04-25",
+      "registration_date": null,
+      "registration_type": "direct",
+      "distances": [
+        "Marathon",
+        "Half Marathon",
+        "5K"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 545,
+        "Half Marathon": 403
+      },
+      "elevation_notes": "Generally flat single-loop course through downtown OKC with modest rolling terrain.",
+      "city": "Oklahoma City",
+      "state_or_country": "Oklahoma",
+      "terrain": "road",
+      "notes": "BQ qualifying, USATF sanctioned. Commemorates the 1995 OKC bombing. Starts at the National Memorial & Museum. 24,000+ runners."
+    },
+    {
+      "name": "Bandit Grand Prix",
+      "category": "other",
+      "website": "https://grandprix.banditrunning.com/",
+      "race_date": "05-30",
+      "race_date_end": "05-30",
+      "registration_date": "12-17",
+      "registration_type": "direct",
+      "distances": [
+        "5K"
+      ],
+      "elevation_gain_ft": {
+        "5K": 0
+      },
+      "elevation_notes": "Flat. Venue event.",
+      "city": "Brooklyn",
+      "state_or_country": "New York",
+      "terrain": "road",
+      "notes": "Formula One-inspired running event held at the Brooklyn Storehouse in New York's Navy Yard. Indoor/outdoor course lined with lights, music, and spectators, and capped by a podium celebration."
+    },
+    {
+      "name": "New Balance Bronx 10 Mile",
+      "category": "other",
+      "website": "https://events.nyrr.org/435525f3d6d28f467f7e",
+      "race_date": "09-19",
+      "race_date_end": "09-19",
+      "registration_date": null,
+      "registration_type": "direct",
+      "distances": [
+        "10 mile"
+      ],
+      "elevation_gain_ft": {},
+      "elevation_notes": "Through the Bronx with moderate elevation changes.",
+      "city": "Bronx",
+      "state_or_country": "New York",
+      "terrain": "road",
+      "notes": "Part of NYRR Five-Borough Series. Qualifies for NYC Marathon (9+1 program) and NYC Half (4 of 6 program). Sells out."
+    },
+    {
+      "name": "Tulsa Run",
+      "category": "other",
+      "website": "https://organizations.hakuapp.com/sites/organization_sites/1299e774a0987b72304f",
+      "race_date": "10-31",
+      "race_date_end": "10-31",
+      "registration_date": null,
+      "registration_type": "direct",
+      "distances": [
+        "15K",
+        "5K",
+        "2K"
+      ],
+      "elevation_gain_ft": {},
+      "elevation_notes": "Generally flat to rolling course through Tulsa.",
+      "city": "Tulsa",
+      "state_or_country": "Oklahoma",
+      "terrain": "road",
+      "notes": "Tulsa tradition since 1978. 150,000+ 15K finishers over its history. Same organizers as Route 66 Marathon. Held in late October."
+    },
+    {
+      "name": "Jersey City Marathon",
+      "category": "marathon",
+      "website": "https://jerseycitymarathon.com/",
+      "race_date": "04-19",
+      "race_date_end": "04-19",
+      "registration_date": "07-31",
+      "registration_type": "direct",
+      "distances": [
+        "Marathon",
+        "Half Marathon"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 384,
+        "Half Marathon": 149
+      },
+      "elevation_notes": "Mostly Flat",
+      "city": "Jersey City",
+      "state_or_country": "New Jersey",
+      "terrain": "road",
+      "notes": "BQ qualifying, USATF certified. Extremely flat course. 10,000+ runners from 50+ countries."
+    },
+    {
+      "name": "Bayshore Marathon",
+      "category": "marathon",
+      "website": "https://www.bayshoremarathon.org/",
+      "race_date": "05-24",
+      "race_date_end": "05-24",
+      "registration_date": "12-01",
+      "registration_type": "direct",
+      "distances": [
+        "Marathon",
+        "Half Marathon",
+        "10K"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 356,
+        "Half Marathon": 308
+      },
+      "elevation_notes": "Flat and fast out-and-back along Grand Traverse Bay. 100% paved, shaded.",
+      "city": "Traverse City",
+      "state_or_country": "Michigan",
+      "terrain": "road",
+      "notes": "Memorial Day Weekend Saturday. Founded 1983. Great BQ course. Sells out."
+    },
+    {
+      "name": "7 Sisters Trail Race",
+      "category": "other",
+      "website": "https://7sisterstrailrace.com/",
+      "race_date": "05-02",
+      "race_date_end": "05-02",
+      "registration_date": "12-20",
+      "registration_type": "direct",
+      "distances": [
+        "12 mile"
+      ],
+      "elevation_gain_ft": {
+        "12 mile": 3500
+      },
+      "elevation_notes": "3,500+ ft gain in 12 miles. Out-and-back on the Holyoke Range ridgecrest.",
+      "city": "Amherst",
+      "state_or_country": "Massachusetts",
+      "terrain": "trail",
+      "notes": "Widely considered the most challenging trail race in the Northeast. Steep, technical singletrack on the M-M Trail. Sells out fast. Runners must carry own hydration."
     }
   ]
 }

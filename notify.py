@@ -277,6 +277,9 @@ def build_email_html(upcoming_7, upcoming_14, upcoming_races, reg_reminders, tod
         """
 
     html += """
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://ghmarsh.github.io/race-notifier/" style="display: inline-block; padding: 12px 24px; background: #3498db; color: white; font-size: 16px; font-weight: 600; border-radius: 6px; text-decoration: none;">View Full Race Calendar</a>
+            </div>
             <div class="footer">
                 <p>This email was generated automatically by RaceNotifier.<br>
                 To update your race list, edit races.json in the repository.</p>

@@ -9,7 +9,28 @@
       "Bash(git fetch *)",
       "Bash(git checkout *)",
       "Bash(git stash *)",
-      "Bash(/c/Program Files/Python313/python.exe *)"
+      "Bash(/c/Program Files/Python313/python.exe *)",
+      "WebFetch(domain:hamptonsmarathon.com)",
+      "WebFetch(domain:organizations.hakuapp.com)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:www.runningintheusa.com)",
+      "WebFetch(domain:runsignup.com)",
+      "WebFetch(domain:www.instagram.com)",
+      "WebFetch(domain:tulsarun.com)",
+      "WebFetch(domain:www.letsrun.com)",
+      "WebFetch(domain:www.athlinks.com)",
+      "WebFetch(domain:findmymarathon.com)",
+      "WebFetch(domain:ultrasignup.com)",
+      "WebFetch(domain:marathonguide.com)",
+      "WebFetch(domain:www.marathoninvestigation.com)",
+      "WebFetch(domain:www.raceentry.com)",
+      "WebFetch(domain:www.banditrunning.com)",
+      "WebFetch(domain:banditrunning.com)",
+      "WebFetch(domain:grandprix.banditrunning.com)",
+      "WebFetch(domain:citius-mag.com)",
+      "WebFetch(domain:www.runnersworld.com)",
+      "WebFetch(domain:www.broadstreetrun.com)",
+      "WebFetch(domain:www.nyrr.org)"
     ]
   }
 }
