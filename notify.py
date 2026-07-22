@@ -123,15 +123,26 @@ def build_email_html(upcoming_7, upcoming_14, upcoming_races, reg_reminders, tod
             .container {{ max-width: 700px; margin: 0 auto; background: white; border-radius: 8px; padding: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }}
             h1 {{ color: #1a1a1a; border-bottom: 3px solid #e74c3c; padding-bottom: 10px; }}
             h2 {{ color: #2c3e50; margin-top: 30px; }}
-            .race-card {{ border: 1px solid #e0e0e0; border-radius: 6px; padding: 15px; margin: 12px 0; background: #fafafa; }}
+            .race-card {{ border: 1px solid #e0e0e0; border-radius: 6px; padding: 16px; margin: 12px 0; background: #fafafa; }}
             .race-card.urgent {{ border-left: 4px solid #e74c3c; background: #fef9f9; }}
             .race-card.soon {{ border-left: 4px solid #f39c12; background: #fefcf5; }}
-            .race-name {{ font-size: 18px; font-weight: bold; color: #2c3e50; margin-bottom: 8px; }}
-            .race-meta {{ font-size: 14px; color: #555; line-height: 1.6; }}
-            .race-meta strong {{ color: #333; }}
-            .days-badge {{ display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: bold; color: white; }}
+            .tier1 {{ margin-bottom: 10px; }}
+            .race-name {{ font-size: 20px; font-weight: 700; color: #2c3e50; }}
+            .race-name a {{ color: #2c3e50; text-decoration: none; }}
+            .days-badge {{ display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: bold; color: white; vertical-align: middle; }}
             .days-badge.urgent {{ background: #e74c3c; }}
             .days-badge.soon {{ background: #f39c12; }}
+            .tier2 {{ margin-bottom: 10px; }}
+            .tier2 table {{ border-collapse: collapse; }}
+            .tier2 td {{ padding: 0 20px 0 0; vertical-align: top; }}
+            .date-label {{ font-size: 11px; text-transform: uppercase; letter-spacing: 0.4px; color: #888; font-weight: 600; }}
+            .date-value {{ font-size: 15px; color: #333; font-weight: 500; }}
+            .reg-type {{ display: inline-block; padding: 1px 6px; border-radius: 4px; font-size: 11px; font-weight: 600; }}
+            .reg-type-lottery {{ background: #fff3e0; color: #e65100; }}
+            .reg-type-direct {{ background: #e8f5e9; color: #2e7d32; }}
+            .tier3 {{ font-size: 13px; color: #666; line-height: 1.6; }}
+            .tier3 .label {{ font-weight: 600; color: #555; font-size: 11px; text-transform: uppercase; letter-spacing: 0.3px; }}
+            .notes {{ margin-top: 8px; font-size: 12px; color: #888; font-style: italic; border-top: 1px solid #f0f0f0; padding-top: 6px; }}
             a {{ color: #3498db; text-decoration: none; }}
             a:hover {{ text-decoration: underline; }}
             .warning {{ background: #fff3cd; border: 1px solid #ffc107; border-radius: 6px; padding: 12px; margin: 12px 0; }}
@@ -144,77 +155,98 @@ def build_email_html(upcoming_7, upcoming_14, upcoming_races, reg_reminders, tod
             <p style="color: #666;">Week of {today.strftime('%B %d, %Y')}</p>
     """
 
-    if upcoming_7:
-        html += '<h2>Registration Opening This Week (7 days)</h2>'
-        for item in upcoming_7:
-            race = item["race"]
-            days = item["days_until"]
-            urgency = "urgent"
-            html += f"""
+    def format_race_date(race):
+        rd = race.get('race_date')
+        if not rd:
+            return 'TBD'
+        resolved = resolve_date(rd, today)
+        return resolved.strftime('%B %d, %Y') if resolved else 'TBD'
+
+    def render_reg_card(item, urgency):
+        race = item["race"]
+        days = item["days_until"]
+        reg_type_class = f"reg-type-{race.get('registration_type', 'direct')}"
+        return f"""
             <div class="race-card {urgency}">
-                <div class="race-name">
-                    {race['name']}
+                <div class="tier1">
+                    <span class="race-name"><a href="{race.get('website', '#')}">{race['name']}</a></span>
                     <span class="days-badge {urgency}">{days} day{'s' if days != 1 else ''}</span>
                 </div>
-                <div class="race-meta">
-                    <strong>Registration Opens:</strong> {item['reg_date'].strftime('%B %d, %Y')}<br>
-                    <strong>Race Date:</strong> {race.get('race_date', 'TBD')}<br>
-                    <strong>Location:</strong> {race.get('city', '')}, {race.get('state_or_country', '')}<br>
-                    <strong>Distances:</strong> {', '.join(race.get('distances', []))}<br>
-                    <strong>Elevation:</strong> {format_elevation(race)}<br>
-                    <strong>Registration Type:</strong> {race.get('registration_type', 'N/A')}<br>
-                    <strong>Website:</strong> <a href="{race.get('website', '#')}">{race.get('website', 'N/A')}</a><br>
-                    {f"<strong>Notes:</strong> {race.get('notes', '')}" if race.get('notes') else ''}
+                <div class="tier2">
+                    <table><tr>
+                        <td><span class="date-label">Registration Opens</span><br><span class="date-value">{item['reg_date'].strftime('%B %d, %Y')}</span></td>
+                        <td><span class="date-label">Race Date</span><br><span class="date-value">{format_race_date(race)}</span></td>
+                        <td><span class="date-label">Type</span><br><span class="date-value"><span class="reg-type {reg_type_class}">{race.get('registration_type', 'N/A')}</span></span></td>
+                    </tr></table>
+                </div>
+                <div class="tier3">
+                    <span class="label">Location:</span> {race.get('city', '')}, {race.get('state_or_country', '')} &nbsp;
+                    <span class="label">Distances:</span> {', '.join(race.get('distances', []))} &nbsp;
+                    <span class="label">Elevation:</span> {format_elevation(race)}
+                </div>
+                {f'<div class="notes">{race.get("notes", "")}</div>' if race.get('notes') else ''}
+            </div>
+            """
+
+    def render_race_card(item):
+        race = item["race"]
+        days = item["days_until"]
+        return f"""
+            <div class="race-card">
+                <div class="tier1">
+                    <span class="race-name"><a href="{race.get('website', '#')}">{race['name']}</a></span>
+                    <span class="days-badge soon">{days} day{'s' if days != 1 else ''}</span>
+                </div>
+                <div class="tier2">
+                    <table><tr>
+                        <td><span class="date-label">Race Date</span><br><span class="date-value">{item['race_date'].strftime('%B %d, %Y')}</span></td>
+                        <td><span class="date-label">Location</span><br><span class="date-value">{race.get('city', '')}, {race.get('state_or_country', '')}</span></td>
+                    </tr></table>
+                </div>
+                <div class="tier3">
+                    <span class="label">Distances:</span> {', '.join(race.get('distances', []))} &nbsp;
+                    <span class="label">Elevation:</span> {format_elevation(race)} &nbsp;
+                    <span class="label">Terrain:</span> {race.get('terrain', 'N/A')}
+                </div>
+                {f'<div class="notes">{race.get("notes", "")}</div>' if race.get('notes') else ''}
+            </div>
+            """
+
+    def render_reminder_card(item):
+        race = item["race"]
+        return f"""
+            <div class="race-card">
+                <div class="tier1">
+                    <span class="race-name"><a href="{race.get('website', '#')}">{race['name']}</a></span>
+                    <span class="days-badge soon">{item['months_out']} out</span>
+                </div>
+                <div class="tier2">
+                    <table><tr>
+                        <td><span class="date-label">Race Date</span><br><span class="date-value">{item['race_date'].strftime('%B %d, %Y')}</span></td>
+                        <td><span class="date-label">Location</span><br><span class="date-value">{race.get('city', '')}, {race.get('state_or_country', '')}</span></td>
+                    </tr></table>
+                </div>
+                <div class="tier3">
+                    <span class="label">Distances:</span> {', '.join(race.get('distances', []))}
                 </div>
             </div>
             """
+
+    if upcoming_7:
+        html += '<h2>Registration Opening This Week (7 days)</h2>'
+        for item in upcoming_7:
+            html += render_reg_card(item, "urgent")
 
     only_14 = [item for item in upcoming_14 if item["days_until"] > 7]
     if only_14:
         html += '<h2>Registration Opening in 8-14 Days</h2>'
         for item in only_14:
-            race = item["race"]
-            days = item["days_until"]
-            html += f"""
-            <div class="race-card soon">
-                <div class="race-name">
-                    {race['name']}
-                    <span class="days-badge soon">{days} days</span>
-                </div>
-                <div class="race-meta">
-                    <strong>Registration Opens:</strong> {item['reg_date'].strftime('%B %d, %Y')}<br>
-                    <strong>Race Date:</strong> {race.get('race_date', 'TBD')}<br>
-                    <strong>Location:</strong> {race.get('city', '')}, {race.get('state_or_country', '')}<br>
-                    <strong>Distances:</strong> {', '.join(race.get('distances', []))}<br>
-                    <strong>Elevation:</strong> {format_elevation(race)}<br>
-                    <strong>Registration Type:</strong> {race.get('registration_type', 'N/A')}<br>
-                    <strong>Website:</strong> <a href="{race.get('website', '#')}">{race.get('website', 'N/A')}</a><br>
-                    {f"<strong>Notes:</strong> {race.get('notes', '')}" if race.get('notes') else ''}
-                </div>
-            </div>
-            """
+            html += render_reg_card(item, "soon")
 
     if upcoming_races:
         html += '<h2>Races Coming Up (Next 14 Days)</h2>'
         for item in upcoming_races:
-            race = item["race"]
-            days = item["days_until"]
-            html += f"""
-            <div class="race-card">
-                <div class="race-name">
-                    {race['name']}
-                    <span class="days-badge soon">{days} day{'s' if days != 1 else ''}</span>
-                </div>
-                <div class="race-meta">
-                    <strong>Race Date:</strong> {item['race_date'].strftime('%B %d, %Y')}<br>
-                    <strong>Location:</strong> {race.get('city', '')}, {race.get('state_or_country', '')}<br>
-                    <strong>Distances:</strong> {', '.join(race.get('distances', []))}<br>
-                    <strong>Elevation:</strong> {format_elevation(race)}<br>
-                    <strong>Website:</strong> <a href="{race.get('website', '#')}">{race.get('website', 'N/A')}</a><br>
-                    {f"<strong>Notes:</strong> {race.get('notes', '')}" if race.get('notes') else ''}
-                </div>
-            </div>
-            """
+            html += render_race_card(item)
 
     if reg_reminders:
         html += """
@@ -224,21 +256,7 @@ def build_email_html(upcoming_7, upcoming_14, upcoming_races, reg_reminders, tod
         </div>
         """
         for item in reg_reminders:
-            race = item["race"]
-            html += f"""
-            <div class="race-card">
-                <div class="race-name">
-                    {race['name']}
-                    <span class="days-badge soon">{item['months_out']} out</span>
-                </div>
-                <div class="race-meta">
-                    <strong>Race Date:</strong> {item['race_date'].strftime('%B %d, %Y')}<br>
-                    <strong>Location:</strong> {race.get('city', '')}, {race.get('state_or_country', '')}<br>
-                    <strong>Distances:</strong> {', '.join(race.get('distances', []))}<br>
-                    <strong>Website:</strong> <a href="{race.get('website', '#')}">{race.get('website', 'N/A')}</a>
-                </div>
-            </div>
-            """
+            html += render_reminder_card(item)
 
     if not upcoming_7 and not only_14 and not upcoming_races and not reg_reminders and not seasonal_reminder:
         html += """
