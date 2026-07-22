@@ -742,14 +742,16 @@
       "name": "Western States Endurance Run",
       "category": "ultra",
       "website": "https://www.wser.org",
-      "race_date": "06-28",
-      "race_date_end": "06-29",
-      "registration_date": "12-07",
+      "race_date": "06-26",
+      "race_date_end": "06-27",
+      "registration_date": "11-01",
       "registration_type": "lottery",
       "distances": [
-        "100 miles"
+        "100 mile"
       ],
-      "elevation_gain_ft": 18090,
+      "elevation_gain_ft": {
+        "100 mile": 18090
+      },
       "elevation_notes": "18,090 ft gain / 22,970 ft descent. Squaw Valley to Auburn on the Western States Trail.",
       "city": "Olympic Valley",
       "state_or_country": "California",
@@ -760,19 +762,83 @@
       "name": "Leadville Trail 100",
       "category": "ultra",
       "website": "https://www.leadvilleraceseries.com/run/leadvilletrail100run/",
-      "race_date": "08-16",
-      "race_date_end": "08-17",
+      "race_date": "08-22",
+      "race_date_end": "08-22",
       "registration_date": "12-01",
       "registration_type": "lottery",
       "distances": [
-        "100 miles"
+        "100 mile"
       ],
-      "elevation_gain_ft": 15600,
+      "elevation_gain_ft": {
+        "100 mile": 15600
+      },
       "elevation_notes": "~15,600 ft gain. Elevation ranges 9,200-12,620 ft. Crosses Hope Pass twice.",
       "city": "Leadville",
       "state_or_country": "Colorado",
       "terrain": "trail",
       "notes": "Out-and-back course over Hope Pass (12,620 ft). No formal qualifier required but 30-hour cutoff is strict. Lottery typically opens in fall/early winter."
+    },
+    {
+      "name": "Leadville Trail Marathon & Heavy Half",
+      "category": "ultra",
+      "website": "https://www.leadvilleraceseries.com/run/trailmarathonheavyhalf/",
+      "race_date": "06-27",
+      "race_date_end": "06-27",
+      "registration_date": "01-09",
+      "registration_type": "direct",
+      "distances": [
+        "Marathon (26.4 mi)",
+        "Heavy Half (15.4 mi)"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 6167,
+        "Heavy Half": 3400
+      },
+      "elevation_notes": "Summits Mosquito Pass at 13,185 ft. Highest trail marathon in the USA.",
+      "city": "Leadville",
+      "state_or_country": "Colorado",
+      "terrain": "trail",
+      "notes": "LT100 Run qualifier event. Summits Mosquito Pass (13,185 ft), highest continuous pass in the country. Marathon cutoff 9.5 hrs, Heavy Half cutoff 7 hrs. First-come first-served registration opens Jan 9 at 10am MST."
+    },
+    {
+      "name": "Silver Rush 50 Run",
+      "category": "ultra",
+      "website": "https://www.leadvilleraceseries.com/run/silverrush50run/",
+      "race_date": "07-11",
+      "race_date_end": "07-11",
+      "registration_date": "01-09",
+      "registration_type": "direct",
+      "distances": [
+        "50 mile"
+      ],
+      "elevation_gain_ft": {
+        "50 mile": 7503
+      },
+      "elevation_notes": "7,500 ft gain over 50 miles through historic mining district.",
+      "city": "Leadville",
+      "state_or_country": "Colorado",
+      "terrain": "trail",
+      "notes": "LT100 Run qualifier event. Out-and-back course. 14-hour cutoff (6am-8pm). First-come first-served registration opens Jan 9 at 10am MST."
+    },
+    {
+      "name": "Leadville 10K Run",
+      "category": "other",
+      "website": "https://www.leadvilleraceseries.com/run/leadville10krun/",
+      "race_date": "08-16",
+      "race_date_end": "08-16",
+      "registration_date": "01-19",
+      "registration_type": "direct",
+      "distances": [
+        "10K"
+      ],
+      "elevation_gain_ft": {
+        "10K": 475
+      },
+      "elevation_notes": "475 ft gain. Uses first and last 3.1 miles of LT100 Run course.",
+      "city": "Leadville",
+      "state_or_country": "Colorado",
+      "terrain": "trail",
+      "notes": "Shortest race in the Leadville Race Series. Held during LT100 race week. Not a qualifier event."
     }
   ]
 }

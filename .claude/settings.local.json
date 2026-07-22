@@ -8,7 +8,8 @@
       "WebFetch(domain:www.londonmarathonevents.co.uk)",
       "Bash(git fetch *)",
       "Bash(git checkout *)",
-      "Bash(git stash *)"
+      "Bash(git stash *)",
+      "Bash(/c/Program Files/Python313/python.exe *)"
     ]
   }
 }
