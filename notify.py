@@ -77,14 +77,31 @@ def find_unknown_reg_reminders(races, today):
         days_until_race = (race_date - today).days
         if days_until_race < 0:
             continue
-        # 9 months = ~274 days, 6 months = ~183 days
+        # 9 months = ~274 days, 6 months = ~183 days, 3 months = ~91 days
         # Trigger if within a 7-day window of these milestones
-        for months, label in [(9, "~9 months"), (6, "~6 months")]:
+        for months, label in [(9, "~9 months"), (6, "~6 months"), (3, "~3 months")]:
             target_days = months * 30.44  # average days per month
             if abs(days_until_race - target_days) <= 7:
                 reminders.append({"race": race, "race_date": race_date, "months_out": label})
                 break
     return reminders
+
+
+def check_seasonal_update_reminder(today):
+    """Return a reminder string if this is the week closest to June 1 or January 1.
+    The cron runs weekly on Mondays, so we trigger if today is within 3 days of
+    those dates (covers the Monday nearest to each)."""
+    from datetime import date
+    jun1 = date(today.year, 6, 1)
+    jan1 = date(today.year, 1, 1)
+    jan1_next = date(today.year + 1, 1, 1)
+
+    closest_jan = jan1 if abs((today - jan1).days) <= abs((today - jan1_next).days) else jan1_next
+    if abs((today - jun1).days) <= 3:
+        return "summer"
+    if abs((today - closest_jan).days) <= 3:
+        return "winter"
+    return None
 
 
 def format_elevation(race):
@@ -97,7 +114,7 @@ def format_elevation(race):
     return f"{elev} ft"
 
 
-def build_email_html(upcoming_7, upcoming_14, upcoming_races, reg_reminders, today):
+def build_email_html(upcoming_7, upcoming_14, upcoming_races, reg_reminders, today, seasonal_reminder=None):
     html = f"""
     <html>
     <head>
@@ -223,11 +240,22 @@ def build_email_html(upcoming_7, upcoming_14, upcoming_races, reg_reminders, tod
             </div>
             """
 
-    if not upcoming_7 and not only_14 and not upcoming_races and not reg_reminders:
+    if not upcoming_7 and not only_14 and not upcoming_races and not reg_reminders and not seasonal_reminder:
         html += """
         <p style="color: #666; font-style: italic; margin: 30px 0;">
             No upcoming registrations or races in the next 14 days. You're all clear!
         </p>
+        """
+
+    if seasonal_reminder:
+        season = "summer" if seasonal_reminder == "summer" else "new year"
+        html += f"""
+        <h2>Seasonal Reminder: Update Your Race List</h2>
+        <div class="warning">
+            <strong>It's {season} — time to update races.json!</strong><br><br>
+            Check each race's website for updated registration dates and race dates for the upcoming season.
+            Many races announce their next edition's details around this time of year.
+        </div>
         """
 
     html += """
@@ -284,14 +312,15 @@ def main():
     upcoming_14 = find_upcoming_registrations(races, today, 14)
     upcoming_races = find_upcoming_races(races, today, 14)
     reg_reminders = find_unknown_reg_reminders(races, today)
+    seasonal_reminder = check_seasonal_update_reminder(today)
 
-    has_content = upcoming_7 or upcoming_14 or upcoming_races or reg_reminders
+    has_content = upcoming_7 or upcoming_14 or upcoming_races or reg_reminders or seasonal_reminder
 
     if not has_content:
         print("No upcoming registrations or races. No email sent.")
         return
 
-    html_body = build_email_html(upcoming_7, upcoming_14, upcoming_races, reg_reminders, today)
+    html_body = build_email_html(upcoming_7, upcoming_14, upcoming_races, reg_reminders, today, seasonal_reminder)
 
     if upcoming_7:
         subject = f"🏃 Race Alert: {len(upcoming_7)} registration(s) opening THIS WEEK!"
@@ -300,6 +329,8 @@ def main():
         subject = f"🏃 Race Alert: {len(only_14)} registration(s) opening in 8-14 days"
     elif upcoming_races:
         subject = f"🏃 Race Alert: {len(upcoming_races)} race(s) coming up in the next 14 days"
+    elif seasonal_reminder:
+        subject = "🏃 Race Alert: Time to update your race list for the season!"
     else:
         subject = "🏃 Race Alert: Races to check - registration dates unknown"
 

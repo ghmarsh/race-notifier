@@ -737,6 +737,42 @@
       "state_or_country": "Massachusetts",
       "terrain": "road",
       "notes": "21+ event. Post-race beer at Harpoon Brewery. Benefits ALS research (Angel Fund + Pete Frates Foundation). Saturday race."
+    },
+    {
+      "name": "Western States Endurance Run",
+      "category": "ultra",
+      "website": "https://www.wser.org",
+      "race_date": "06-28",
+      "race_date_end": "06-29",
+      "registration_date": "12-07",
+      "registration_type": "lottery",
+      "distances": [
+        "100 miles"
+      ],
+      "elevation_gain_ft": 18090,
+      "elevation_notes": "18,090 ft gain / 22,970 ft descent. Squaw Valley to Auburn on the Western States Trail.",
+      "city": "Olympic Valley",
+      "state_or_country": "California",
+      "terrain": "trail",
+      "notes": "The oldest 100-mile trail race. Lottery entry requires qualification via approved races. Odds improve with consecutive unsuccessful entries. Lottery drawn first Saturday in December."
+    },
+    {
+      "name": "Leadville Trail 100",
+      "category": "ultra",
+      "website": "https://www.leadvilleraceseries.com/run/leadvilletrail100run/",
+      "race_date": "08-16",
+      "race_date_end": "08-17",
+      "registration_date": "12-01",
+      "registration_type": "lottery",
+      "distances": [
+        "100 miles"
+      ],
+      "elevation_gain_ft": 15600,
+      "elevation_notes": "~15,600 ft gain. Elevation ranges 9,200-12,620 ft. Crosses Hope Pass twice.",
+      "city": "Leadville",
+      "state_or_country": "Colorado",
+      "terrain": "trail",
+      "notes": "Out-and-back course over Hope Pass (12,620 ft). No formal qualifier required but 30-hour cutoff is strict. Lottery typically opens in fall/early winter."
     }
   ]
 }

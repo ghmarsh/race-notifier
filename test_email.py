@@ -64,7 +64,9 @@ def main():
             "months_out": "~6 months",
         }]
 
-    html_body = build_email_html(fake_upcoming_7, fake_upcoming_14, fake_upcoming_races, fake_reg_reminders, today)
+    fake_seasonal_reminder = "summer"
+
+    html_body = build_email_html(fake_upcoming_7, fake_upcoming_14, fake_upcoming_races, fake_reg_reminders, today, fake_seasonal_reminder)
 
     subject = "[TEST] Race Registration Notifier - All Sections"
     send_email(subject, html_body)
