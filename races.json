@@ -934,7 +934,7 @@
       "website": "https://okcmarathon.com/",
       "race_date": "04-23",
       "race_date_end": "04-25",
-      "registration_date": null,
+      "registration_date": "08-29",
       "registration_type": "direct",
       "distances": [
         "Marathon",
@@ -1096,6 +1096,26 @@
       "state_or_country": "Texas",
       "terrain": "road",
       "notes": "Third Sunday in January. One of the fastest marathon courses in the US. BQ qualifying, USATF certified. Frequently used as an Olympic Trials qualifier."
+    },
+    {
+      "name": "Boston Marathon",
+      "category": "marathon",
+      "website": "https://www.baa.org/races/boston-marathon/",
+      "race_date": "04-19",
+      "race_date_end": "04-19",
+      "registration_date": "09-08",
+      "registration_type": "direct",
+      "distances": [
+        "Marathon"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 815
+      },
+      "elevation_notes": "Net downhill course with the Newton Hills coming in the mid to later stages of the race.",
+      "city": "Boston",
+      "state_or_country": "Massachusetts",
+      "terrain": "road",
+      "notes": "The world's oldest annual marathon and one of the sport's most prestigious races. No lottery for this race, you must achieve a qualifying time."
     }
   ]
 }
