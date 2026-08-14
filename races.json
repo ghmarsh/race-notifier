@@ -1116,6 +1116,28 @@
       "state_or_country": "Massachusetts",
       "terrain": "road",
       "notes": "The world's oldest annual marathon and one of the sport's most prestigious races. No lottery for this race, you must achieve a qualifying time."
+    }, 
+    {
+      "name": "Great Wall Marathon",
+      "category": "marathon",
+      "website": "https://great-wall-marathon.com/",
+      "race_date": "05-15",
+      "race_date_end": "05-15",
+      "registration_date": "05-16",
+      "registration_type": "direct",
+      "distances": [
+        "Marathon",
+        "Half Marathon",
+        "8.5K"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 4206
+      },
+      "elevation_notes": "Lots of Stairs",
+      "city": "Huangyaguan",
+      "state_or_country": "China",
+      "terrain": "stairs",
+      "notes": "one of the world's most challenging and iconic races, along the Huangyaguan section of China's Great Wall with 5,164 stone steps."
     }
   ]
 }
