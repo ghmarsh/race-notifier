@@ -1118,26 +1118,55 @@
       "notes": "The world's oldest annual marathon and one of the sport's most prestigious races. No lottery for this race, you must achieve a qualifying time."
     }, 
     {
-      "name": "Great Wall Marathon",
-      "category": "marathon",
-      "website": "https://great-wall-marathon.com/",
-      "race_date": "05-15",
-      "race_date_end": "05-15",
-      "registration_date": "05-16",
+      "name": "Kodiak Ultra Marathons",
+      "category": "ultra",
+      "website": "https://kodiak.utmb.world/",
+      "race_date": "10-09",
+      "race_date_end": "10-10",
+      "registration_date": null,
       "registration_type": "direct",
       "distances": [
-        "Marathon",
-        "Half Marathon",
-        "8.5K"
+        "100 mile",
+        "100K",
+        "50K",
+        "21K",
+        "10K"
       ],
       "elevation_gain_ft": {
-        "Marathon": 4206
+        "100 mile": 16000,
+        "100K": 10311,
+        "50K": 4475
       },
-      "elevation_notes": "Lots of Stairs",
-      "city": "Huangyaguan",
-      "state_or_country": "China",
-      "terrain": "stairs",
-      "notes": "one of the world's most challenging and iconic races, along the Huangyaguan section of China's Great Wall with 5,164 stone steps."
+      "elevation_notes": "",
+      "city": "Big Bear Lake",
+      "state_or_country": "California",
+      "terrain": "trail",
+      "notes": "Enjoy views of Big Bear Lake throughout their journey – whether you’re climbing to the top of Sugarloaf Mountain or cruising along the ridge on Skyline trail, the courses will ‘wow’ you at every turn."
+    }, 
+    {
+      "name": "Grindstone Trail Running Festival",
+      "category": "ultra",
+      "website": "https://grindstone.utmb.world/",
+      "race_date": "09-23",
+      "race_date_end": "09-26",
+      "registration_date": null,
+      "registration_type": "direct",
+      "distances": [
+        "100 mile",
+        "100K",
+        "50K",
+        "20K"
+      ],
+      "elevation_gain_ft": {
+        "100 mile": 20997,
+        "100K": 10990,
+        "50K": 5085
+      },
+      "elevation_notes": "",
+      "city": "Swoope",
+      "state_or_country": "Virginia",
+      "terrain": "trail",
+      "notes": "Take the trail through the diverse wildlife as they climb the Appalachian Mountains and trek along the ridge to stunning views"
     }
   ]
 }
