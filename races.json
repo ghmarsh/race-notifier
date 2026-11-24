@@ -1137,11 +1137,11 @@
         "100K": 10311,
         "50K": 4475
       },
-      "elevation_notes": "",
+      "elevation_notes": "Sustained mountain climbing at high altitude with steep ascents and descents.",
       "city": "Big Bear Lake",
       "state_or_country": "California",
       "terrain": "trail",
-      "notes": "Enjoy views of Big Bear Lake throughout their journey – whether you’re climbing to the top of Sugarloaf Mountain or cruising along the ridge on Skyline trail, the courses will ‘wow’ you at every turn."
+      "notes": "High-altitude UTMB World Series race, featuring mountain ridges, forests, and lake views. Also serves as a qualifier for both UTMB and Western States."
     }, 
     {
       "name": "Grindstone Trail Running Festival",
@@ -1162,11 +1162,97 @@
         "100K": 10990,
         "50K": 5085
       },
-      "elevation_notes": "",
+      "elevation_notes": "Relentless climbing over rugged Appalachian ridges and peaks.",
       "city": "Swoope",
       "state_or_country": "Virginia",
       "terrain": "trail",
-      "notes": "Take the trail through the diverse wildlife as they climb the Appalachian Mountains and trek along the ridge to stunning views"
+      "notes": "A notoriously challenging East Coast trail race through Virginia's Shenandoah Valley and national forest. Technical terrain, major elevation gain, and fall foliage make it especially scenic and demanding."
+    },
+    {
+      "name": "California International Marathon",
+      "category": "marathon",
+      "website": "https://runcim.org/",
+      "race_date": "12-06",
+      "race_date_end": "12-06",
+      "registration_date": null,
+      "registration_type": "direct",
+      "distances": [
+        "Marathon"
+      ],
+      "elevation_gain_ft": {
+        "Marathon": 663
+      },
+      "elevation_notes": "Gentle rolling hills with a net-downhill, fast finish.",
+      "city": "Sacramento",
+      "state_or_country": "California",
+      "terrain": "road",
+      "notes": "One of the premier marathon PR and Boston-qualifying courses in the U.S. Point-to-point course finishing at the California State Capitol."
+    },
+    {
+      "name": "JFK 50 Mile",
+      "category": "ultra",
+      "website": "https://www.jfk50mile.org/",
+      "race_date": "11-21",
+      "race_date_end": "11-21",
+      "registration_date": null,
+      "registration_type": "direct",
+      "distances": [
+        "50 mile"
+      ],
+      "elevation_gain_ft": {
+        "50 mile": 3000
+      },
+      "elevation_notes": "Front-loaded climbing followed by a long flat middle section.",
+      "city": "Boonsboro",
+      "state_or_country": "MAryland",
+      "terrain": "trail",
+      "notes": "America's oldest ultramarathon, first held in 1963. A unique point-to-point 50-miler combining the Appalachian Trail, C&O Canal towpath, and country roads, with a 13-hour cutoff."
+    },
+    {
+      "name": "UTMB Whistler",
+      "category": "ultra",
+      "website": "https://whistler.utmb.world/",
+      "race_date": "06-26",
+      "race_date_end": "06-27",
+      "registration_date": null,
+      "registration_type": "direct",
+      "distances": [
+        "100K",
+        "50K",
+        "20K",
+        "10K"
+      ],
+      "elevation_gain_ft": {
+        "100K": 16732,
+        "50K": 9652,
+        "20K": 4921,
+        "10K": 1804
+      },
+      "elevation_notes": "Steep, sustained climbs and descents on mountainous terrain.",
+      "city": "Whistler",
+      "state_or_country": "Canada",
+      "terrain": "trail",
+      "notes": "UTMB World Series event, featuring technical mountain running through forests and alpine terrain with views of Black Tusk and surrounding peaks."
+    },
+    {
+      "name": "Rock 'n' Roll (D.C.)",
+      "category": "other",
+      "website": "https://www.runrocknroll.com/events/washington-dc",
+      "race_date": "03-20",
+      "race_date_end": "03-20",
+      "registration_date": null,
+      "registration_type": "direct",
+      "distances": [
+        "Half Marathon"
+      ],
+      "elevation_gain_ft": {
+        "Half Marathon": 200
+      },
+      "elevation_notes": "Mostly flat with modest rolling elevation.",
+      "city": "Washington, D.C.",
+      "state_or_country": "D.C.",
+      "terrain": "road",
+      "notes": "Large, energetic spring race through Washington, D.C., featuring live music and a course past many of the city's major monuments, with a finish near the Capitol."
     }
   ]
 }
